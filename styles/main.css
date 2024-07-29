@@ -1,0 +1,225 @@
+@font-face {
+    font-family: Dosis;
+    src: url(../fonts/dosis.ttf);
+}
+/* 
+:root {
+    --transparent-black: #00000080;
+    --absolute-white: #ffffff;
+    --keyboard-color: #818384;
+
+    --green-color: #538d4e;
+    --yellow-color: #b59f3b;
+    --black-color: #3a3a3c;
+
+    --bg-color: #121213;
+    --white-color: #ffffff;
+} */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    font-family: Dosis, sans-serif;
+    /* color: var(--white-color); */
+    -webkit-tap-highlight-color: transparent;
+}
+html {
+    font-size: 16px;
+}
+body {
+    & main {
+        & > section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            & > .title {
+                font-size: 4rem;
+                padding: .25em 0;
+            }
+        }
+    }
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+header {
+    /* position: fixed;
+    top: 0;
+    z-index: 12; */
+}
+.home {
+    min-height: 100dvh;
+    background-color: #eee;
+    display: flex;
+    flex-direction: row;
+
+    & .contact-info {
+        font-size: 1.8rem;
+
+        & .intro-text, 
+        & .profession {
+            font-size: 3rem;
+            padding-bottom: .5em;
+        }
+        & .title {
+            font-size: 4rem;
+            padding: .0em 0;
+        }
+        & .profession {
+            font-size: 3rem;
+        }
+        & p {
+            padding-bottom: .25em;
+            & i {
+                width: 4rem;
+                text-align: center;
+            }
+        }
+        & .social-media {
+            display: flex;
+            gap: .5em;
+            padding: .5em 0;
+
+            & span {
+                width: 4rem;
+                height: 4rem;
+                border-radius: 50%;
+                display: grid;
+                place-items: center;
+                transition: background-color 400ms, color 400ms;
+
+                &:hover {
+                    /* background-color: blue;
+                    color: white; */
+                }
+            }
+        }
+    }
+
+    & .photo-container img {
+        min-width: 30vw;
+        height: 100%;
+        background-color: red;
+    }
+}
+
+.about-me {
+    flex-direction: row;
+
+    & .photo-container img {
+        min-width: 30vw;
+        height: 100%;
+    }
+    & .description {
+        font-size: 1.5rem;
+        padding: 3em;
+
+        & .title {
+            font-size: 4rem;
+            margin-bottom: .25em;
+        }
+        & .summary p {
+            margin-bottom: .5em;
+        }
+    }
+}
+
+.skills {
+    background-color: red;
+}
+
+.education, 
+.experience {
+    & .education-container,
+    & .experience-container {
+        font-size: 1.5rem;
+        display: grid;
+        grid-template: auto / repeat(3, 1fr);
+        gap: 1em;
+        padding: 1em;
+
+        & > div {
+            padding: 2em;
+            box-shadow: 0 0 20px #00000010;
+
+            &:nth-of-type(3),
+            &:nth-of-type(5),
+            &:nth-of-type(6),
+            &:nth-of-type(8) {
+                order: 1;
+            }
+            &:nth-of-type(7) {
+                order: 2;
+            }
+        }
+
+        & .card {
+            grid-column: span 2;
+            h3, p {
+                padding: .2em 0;
+            }
+        }
+        & .image-container img {
+            width: 100%;
+            height: 100%;
+            max-height: (200px);
+            object-fit: contain;
+        }
+    }
+}
+
+.projects {
+    background-color: #eee;
+}
+
+.achievements {
+    & .achievements-container {
+        font-size: 1.5rem;
+        display: flex;
+        gap: 1em;
+        padding: 2em 1em;
+
+        & > div {
+            width: 100%;
+            padding: 2em;
+            box-shadow: 0 0 20px #00000010;
+
+            &:nth-of-type(2) {
+                margin: -1em 0;
+            }
+        }
+    }
+}
+
+.hobbies {
+    & .hobbies-container {
+        font-size: 1.5rem;
+        display: flex;
+        gap: 1em;
+        padding: 2em 1em;
+        margin-top: 1em;
+
+        & > div {
+            width: 100%;
+            padding: 2em;
+            box-shadow: 0 0 20px #00000010;
+
+            &:nth-of-type(odd) {
+                translate: 0 -1em;
+            }
+        }
+    }
+}
+
+footer {
+    background-color: #333333;
+    color: #ffffff;
+    font-size: 1.8rem;
+    padding: 1em;
+    margin-top: 2em;
+    text-align: center;
+}
