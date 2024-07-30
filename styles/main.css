@@ -4,19 +4,6 @@
 }
 
 :root {
-    --text-color: transparent;
-    --opacity: 1;
-
-    --transparent-black: #00000080;
-    --absolute-white: #ffffff;
-    --keyboard-color: #818384;
-
-    --green-color: #538d4e;
-    --yellow-color: #b59f3b;
-    --black-color: #3a3a3c;
-
-    --bg-color: #121213;
-    --white-color: #ffffff;
 }
 * {
     box-sizing: border-box;
@@ -24,7 +11,6 @@
     padding: 0;
     user-select: none;
     font-family: Dosis, sans-serif;
-    /* color: var(--white-color); */
     -webkit-tap-highlight-color: transparent;
 }
 html {
@@ -183,40 +169,31 @@ header {
     background-color: #eee;
 
     & .skills-container {
+        font-size: 1.5rem;
+        width: 100%;
         display: grid;
         grid-template: auto / repeat(3, 1fr);
-        gap: 1em;
+        gap: 4em 1em;
+        padding: 4em 1em 1em 1em;
 
         & .card {
-            /* display: flex; */
-            /* width: 100%; */
+            position: relative;
+            display: flex;
+            align-items: center;
+            height: 150px;
             font-size: 1.5rem;
-            padding: 1em;
-            color: white;
+            padding: 2em;
+            background-color: #333;
+            color: white; 
 
-            &:first-of-type {
-                background-color: orange;
+            & img {
+                position: absolute;
+                width: 200px;
+                bottom: 1em;
+                right: 1em;
             }
-            &:nth-of-type(2) {
-                background-color: blue;
-            }
-            &:nth-of-type(3) {
-                background-color: yellow;
-            }
-            &:nth-of-type(4) {
-                background-color: dodgerblue;
-            }
-            &:nth-of-type(5) {
-                background-color: red;
-            }
-            &:nth-of-type(6) {
-                background-color: blueviolet;
-            }
-            &:nth-of-type(7) {
-                background-color: blueviolet;
-            }
-            &:nth-of-type(8) {
-                background-color: gray;
+            & h3 {
+                font-size: 3rem;
             }
         }
     }
