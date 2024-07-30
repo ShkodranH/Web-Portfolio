@@ -1,0 +1,164 @@
+@media screen and (max-width: 1500px) {
+    .home .contact-info {
+        padding-left: 1.5em;
+        .title {
+            font-size: 3.5rem;
+        }
+    }
+    .skills .skills-container {
+        padding-top: 3em;
+        row-gap: 3em;
+        & .card {
+            height: 120px;
+            padding: 1em;
+            & img {
+                width: 150px;
+            }
+            & h3 {
+                font-size: 2.5rem;
+            }
+        }
+    }
+    .projects .projects-container {
+        grid-template: auto / repeat(2, 1fr);
+    }
+    .hobbies .hobbies-container .card p {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    header {
+        justify-content: center;
+        & .credential-container {
+            display: none;
+        }
+        & nav ul {
+            font-size: 1.5rem;
+        }
+    }
+    .home {
+        & .contact-info {
+            width: fit-content;
+        }
+        & .photo-container {
+            display: none;
+        }
+    }
+    .about-me {
+        & .description {
+            padding: 1em;
+        }
+    }
+    .skills .skills-container {
+        grid-template: auto / repeat(2, 1fr);
+    }
+    .education .education-container, 
+    .experience .experience-container {
+        & > div {
+            padding: 1em;
+        }
+    }
+    .hobbies .hobbies-container {
+        grid-template: auto / repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    header {
+        display: none;
+    }
+    .home {
+        min-height: 100dvh;
+        margin-top: 0;
+    }
+    .about-me {
+        position: relative;
+        & .photo-container img {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        & .description {
+            padding: 2em;
+            color: white;
+            background-color: #000000b0;
+            & .title {
+                text-align: center;
+            }
+        }
+    }
+    .education .education-container, 
+    .experience .experience-container {
+        grid-template: auto / repeat(2, 1fr);
+        & .image-container {
+            display: none;
+        }
+    }
+    .projects .projects-container {
+        grid-template: auto / repeat(1, 1fr);
+        & .card-special {
+            display: none;
+        }
+    }
+    .achievements .achievements-container .card {
+        padding: 1em;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .skills .skills-container {
+        grid-template: auto / 1fr;
+    }
+    .achievements .achievements-container {
+        flex-direction: column;
+        & .card:nth-of-type(2) {
+            order: -1;
+            margin: 0;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    html {
+        font-size: 12px;
+    }
+    body main > section > .title,
+    .about-me .description .title {
+        font-size: 3rem;
+    }
+    .home .contact-info {
+        padding-left: 0em;
+    }
+    .skills .skills-container .card {
+        padding: 2em;
+        height: 100px;
+        & img {
+            width: 120px;
+        }
+        & h3 {
+            font-size: 2rem;
+        }
+    }
+    .education .education-container .card,
+    .experience .experience-container .card,
+    .projects .projects-container .card {
+        & .instituition,
+        & .company,
+        & .name {
+            font-size: 2rem;
+        }
+        & > .title {
+            font-size: 1.5rem;
+        }
+    }
+    .hobbies .hobbies-container .card p {
+        font-size: 1.5rem;
+    }
+    footer {
+        font-size: 1.5rem;
+    }
+}

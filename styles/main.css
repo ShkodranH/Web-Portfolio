@@ -202,7 +202,7 @@ header {
 .education, 
 .experience {
     background-color: #333;
-    & > .title{
+    & > .title {
         color: white;
     }
     & .education-container,
@@ -329,18 +329,17 @@ header {
 .hobbies {
     & .hobbies-container {
         font-size: 1.5rem;
-        display: flex;
+        display: grid;
+        grid-template: auto / repeat(4, 1fr);
         gap: 1em;
         padding: 2em 1em;
         margin-top: 1em;
 
         & .card {
             position: relative;
-            width: 100%;
             aspect-ratio: 1 / 1;
             display: grid;
             place-items: center;
-            padding: 2em;
             background-color: #333;
 
             &:nth-of-type(odd) {
