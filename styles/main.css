@@ -2,8 +2,11 @@
     font-family: Dosis;
     src: url(../fonts/dosis.ttf);
 }
-/* 
+
 :root {
+    --text-color: transparent;
+    --opacity: 1;
+
     --transparent-black: #00000080;
     --absolute-white: #ffffff;
     --keyboard-color: #818384;
@@ -14,7 +17,7 @@
 
     --bg-color: #121213;
     --white-color: #ffffff;
-} */
+}
 * {
     box-sizing: border-box;
     margin: 0;
@@ -26,6 +29,8 @@
 }
 html {
     font-size: 16px;
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
 }
 body {
     & main {
@@ -34,6 +39,7 @@ body {
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            padding: 2em 0 5em;
 
             & > .title {
                 font-size: 4rem;
@@ -47,18 +53,40 @@ a {
     color: inherit;
 }
 header {
-    /* position: fixed;
+    position: fixed;
     top: 0;
-    z-index: 12; */
+    width: 100%;
+    height: 5rem;
+    padding: 0 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    box-shadow: 0 0 15px #00000030;
+    z-index: 3;
+
+    & .credential-container {
+        font-size: 1.8rem;
+    }
+    & nav ul {
+        font-size: 1.8rem;
+        display: flex;
+        gap: 1em;
+        list-style: none;
+    }
 }
 .home {
-    min-height: 100dvh;
+    min-height: calc(100dvh - 5rem);
     background-color: #eee;
     display: flex;
     flex-direction: row;
+    padding: 0;
+    margin-top: 5rem;
 
     & .contact-info {
         font-size: 1.8rem;
+        width: 40%;
+        padding-left: 3em;
 
         & .intro-text, 
         & .profession {
@@ -93,26 +121,45 @@ header {
                 transition: background-color 400ms, color 400ms;
 
                 &:hover {
-                    /* background-color: blue;
-                    color: white; */
+                    background-color: #333;
+                    color: white;
                 }
             }
         }
     }
     & .photo-container {
+        position: relative;
+        width: 60%;
+        align-self: stretch;
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+
+        & .photo-bg {
+            position: absolute;
+            top: 0;
+            rotate: 15deg;
+            scale: 1.5;
+            transform-origin: bottom left;
+            width: 100%;
+            height: 100%;
+            background-color: #333;
+        }
+
         & img {
             width: 300px;
-            height: 100%;
-            filter: drop-shadow(5px 0 0 blue) 
-                    drop-shadow(0 5px 0 blue)
-                    drop-shadow(-5px 0 0 blue) 
-                    drop-shadow(0 -5px 0 blue);
+            z-index: 1;
+            filter: drop-shadow(.75em 0 0 white) 
+                    drop-shadow(0 .75em 0 white)
+                    drop-shadow(-.75em 0 0 white) 
+                    drop-shadow(0 -.75em 0 white);
         }
     }
 }
 
 .about-me {
     flex-direction: row;
+    padding: 0;
 
     & .photo-container img {
         min-width: 30vw;
@@ -133,11 +180,54 @@ header {
 }
 
 .skills {
-    background-color: red;
+    background-color: #eee;
+
+    & .skills-container {
+        display: grid;
+        grid-template: auto / repeat(3, 1fr);
+        gap: 1em;
+
+        & .card {
+            /* display: flex; */
+            /* width: 100%; */
+            font-size: 1.5rem;
+            padding: 1em;
+            color: white;
+
+            &:first-of-type {
+                background-color: orange;
+            }
+            &:nth-of-type(2) {
+                background-color: blue;
+            }
+            &:nth-of-type(3) {
+                background-color: yellow;
+            }
+            &:nth-of-type(4) {
+                background-color: dodgerblue;
+            }
+            &:nth-of-type(5) {
+                background-color: red;
+            }
+            &:nth-of-type(6) {
+                background-color: blueviolet;
+            }
+            &:nth-of-type(7) {
+                background-color: blueviolet;
+            }
+            &:nth-of-type(8) {
+                background-color: gray;
+            }
+        }
+    }
 }
 
 .education, 
 .experience {
+    background-color: #333;
+    & > .title{
+        color: white;
+    }
     & .education-container,
     & .experience-container {
         font-size: 1.5rem;
@@ -148,6 +238,7 @@ header {
 
         & > div {
             padding: 2em;
+            background-color: white;
             box-shadow: 0 0 20px #00000010;
 
             &:nth-of-type(3),
@@ -178,6 +269,7 @@ header {
 
 .projects {
     background-color: #eee;
+    
     & .projects-container {
         font-size: 1.5rem;
         display: grid;
@@ -206,19 +298,52 @@ header {
 }
 
 .achievements {
+    background-color: #333333;
+    & .title {
+        color: white;
+    }
+
     & .achievements-container {
         font-size: 1.5rem;
         display: flex;
         gap: 1em;
         padding: 2em 1em;
 
-        & > div {
+        & .card {
+            position: relative;
             width: 100%;
             padding: 2em;
-            box-shadow: 0 0 20px #00000010;
+            overflow: hidden;
 
+            &:first-of-type {
+                background-color: #c0c0c0;
+                box-shadow: 0 0 20px #ffffff20;
+                & .glass-effect {
+                    animation-delay: 1000ms;
+                }
+            }
             &:nth-of-type(2) {
                 margin: -1em 0;
+                background-color: #ffd700;
+                box-shadow: 0 0 20px #ffffff20;
+            }
+            &:last-of-type {
+                background-color: #cd7f32;
+                box-shadow: 0 0 20px #ffffff20;
+                & .glass-effect {
+                    animation-delay: 2000ms;
+                }
+            }
+
+            & .glass-effect {
+                position: absolute;
+                top: 0;
+                left: -20%;
+                background-color: #ffffff80;
+                width: 1em;
+                height: 100%;
+                transform: rotate(20deg) scale(1.5);
+                animation: 6s glassAnim infinite;
             }
         }
     }
@@ -232,14 +357,31 @@ header {
         padding: 2em 1em;
         margin-top: 1em;
 
-        & > div {
+        & .card {
+            position: relative;
             width: 100%;
+            aspect-ratio: 1 / 1;
+            display: grid;
+            place-items: center;
             padding: 2em;
-            box-shadow: 0 0 20px #00000010;
+            background-color: #333;
 
             &:nth-of-type(odd) {
                 translate: 0 -1em;
             }
+            & img {
+                position: absolute;
+                width: calc(100% - 4em);
+                object-fit: contain;
+            }
+            & p {
+                font-size: 2.5rem;
+                font-weight: bold;
+                text-align: center;
+                z-index: 1;
+                color: transparent;
+            }
+
         }
     }
 }
@@ -249,6 +391,31 @@ footer {
     color: #ffffff;
     font-size: 1.8rem;
     padding: 1em;
-    margin-top: 2em;
     text-align: center;
+}
+
+.rotateClass {
+    animation: 3000ms rotateAnim;
+}
+.innerClass {
+    & p {
+        color: white !important;
+    }
+    & img {
+        opacity: 0 !important;
+    }
+}
+
+@keyframes rotateAnim {
+    0%   { transform: rotateY(0deg)  translateY(0em)  }
+    10%  { transform: rotateY(90deg) translateY(-1em) }
+    20%  { transform: rotateY(0deg) translateY(0em)   }
+    80%  { transform: rotateY(0deg) translateY(0em)   }
+    90%  { transform: rotateY(90deg) translateY(-1em) }
+    100% { transform: rotateY(0deg) translateY(0em)   }
+}
+@keyframes glassAnim {
+    0%   { left: -20% }
+    20%  { left: 120% }
+    100% { left: 120% }
 }
